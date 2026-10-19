@@ -1,6 +1,7 @@
 type IconName =
   | 'arrow-down'
   | 'arrow-up'
+  | 'chart'
   | 'edit'
   | 'logout'
   | 'plus'
@@ -11,6 +12,7 @@ type IconName =
 const paths: Record<IconName, string> = {
   'arrow-down': 'M12 5v14m0 0 6-6m-6 6-6-6',
   'arrow-up': 'M12 19V5m0 0-6 6m6-6 6 6',
+  chart: 'M4 19V9m6 10V5m6 14v-7m4 7H2',
   edit: 'M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L8 18l-4 1 1-4Z',
   logout: 'M10 17l5-5-5-5m5 5H3m9-9h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6',
   plus: 'M12 5v14M5 12h14',

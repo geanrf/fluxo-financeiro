@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { AuthScreen } from '../features/auth/AuthScreen'
 import type { AuthResponse, User } from '../features/auth/types'
+import { DashboardPage } from '../features/dashboard/DashboardPage'
 import { ExpensesPage } from '../features/expenses/ExpensesPage'
 import type { FinanceSection } from '../features/finance/FinanceShell'
 import { IncomesPage } from '../features/incomes/IncomesPage'
@@ -19,7 +20,7 @@ export function App() {
     getAccessToken() ? 'checking' : 'anonymous',
   )
   const [user, setUser] = useState<User | null>(null)
-  const [financeSection, setFinanceSection] = useState<FinanceSection>('expenses')
+  const [financeSection, setFinanceSection] = useState<FinanceSection>('dashboard')
 
   useEffect(() => {
     if (sessionState !== 'checking') return
@@ -38,14 +39,14 @@ export function App() {
   function handleAuthenticated(response: AuthResponse) {
     storeAccessToken(response.accessToken)
     setUser(response.user)
-    setFinanceSection('expenses')
+    setFinanceSection('dashboard')
     setSessionState('authenticated')
   }
 
   function handleLogout() {
     clearAccessToken()
     setUser(null)
-    setFinanceSection('expenses')
+    setFinanceSection('dashboard')
     setSessionState('anonymous')
   }
 
@@ -67,6 +68,10 @@ export function App() {
 
   if (financeSection === 'incomes') {
     return <IncomesPage onLogout={handleLogout} onNavigate={setFinanceSection} user={user} />
+  }
+
+  if (financeSection === 'dashboard') {
+    return <DashboardPage onLogout={handleLogout} onNavigate={setFinanceSection} user={user} />
   }
 
   return <ExpensesPage onLogout={handleLogout} onNavigate={setFinanceSection} user={user} />

@@ -2,7 +2,7 @@ import type { ReactNode } from 'react'
 import type { User } from '../auth/types'
 import { Icon } from '../../shared/ui/Icon'
 
-export type FinanceSection = 'expenses' | 'incomes'
+export type FinanceSection = 'dashboard' | 'expenses' | 'incomes'
 
 type FinanceShellProps = {
   activeSection: FinanceSection
@@ -36,6 +36,13 @@ export function FinanceShell({
         </div>
 
         <nav aria-label="Navegação principal">
+          <button
+            className={activeSection === 'dashboard' ? 'active' : ''}
+            onClick={() => onNavigate('dashboard')}
+            type="button"
+          >
+            <span><Icon name="chart" size={17} /></span> Visão geral
+          </button>
           <button
             className={activeSection === 'expenses' ? 'active' : ''}
             onClick={() => onNavigate('expenses')}

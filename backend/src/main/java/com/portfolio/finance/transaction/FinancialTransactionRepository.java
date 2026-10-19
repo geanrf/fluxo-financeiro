@@ -2,6 +2,7 @@ package com.portfolio.finance.transaction;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -21,5 +22,11 @@ public interface FinancialTransactionRepository extends JpaRepository<FinancialT
             UUID id,
             UUID userId,
             TransactionType type
+    );
+
+    List<FinancialTransaction> findAllByUser_IdAndTransactionDateBetweenOrderByTransactionDateDescCreatedAtDesc(
+            UUID userId,
+            LocalDate from,
+            LocalDate to
     );
 }
