@@ -1,0 +1,26 @@
+spring:
+  config:
+    import:
+      - optional:file:.env[.properties]
+      - optional:file:../.env[.properties]
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:finance}
+    username: ${POSTGRES_USER:finance}
+    password: ${POSTGRES_PASSWORD}
+  flyway:
+    enabled: true
+    create-schemas: true
+    default-schema: finance
+    schemas: finance
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        default_schema: finance
+
+app:
+  security:
+    jwt:
+      secret: ${JWT_SECRET:}
+      access-token-ttl: PT2H
