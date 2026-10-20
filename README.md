@@ -82,7 +82,7 @@ Docker e PostgreSQL **não são necessários** para o ambiente local padrão.
 ### 1. Clonar o repositório
 
 ```bash
-git clone <URL-DO-REPOSITORIO> fluxo
+git clone https://github.com/geanrf/fluxo-financeiro.git fluxo
 cd fluxo
 ```
 
@@ -202,4 +202,4 @@ Veja o registro da auditoria em [docs/security-audit.md](docs/security-audit.md)
 
 ## Estado do projeto
 
-MVP funcional e validado, com autenticação, receitas, despesas e dashboard integrados à API real. O repositório está preparado para publicação como projeto de portfólio.
+MVP publicado e funcional, com autenticação, receitas, despesas e dashboard integrados à API real. O projeto está disponível no [GitHub](https://github.com/geanrf/fluxo-financeiro) como portfólio Java Full Stack.

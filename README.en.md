@@ -1,6 +1,6 @@
 # Fluxo — Personal Finance Manager
 
-[Versão em português](README.md) · [Architecture](docs/architecture.md) · [Screenshot guide](docs/screenshots/README.md)
+[Portuguese version](README.md) · [Architecture](docs/architecture.md) · [Screenshot guide](docs/screenshots/README.md)
 
 **Fluxo** is a full-stack web application for personal finance management. It demonstrates an end-to-end implementation of user registration and authentication, authorization rules, persistence, REST APIs, a responsive interface, and integration tests.
 
@@ -82,7 +82,7 @@ Docker and PostgreSQL are **not required** for the default local environment.
 ### 1. Clone
 
 ```bash
-git clone <REPOSITORY-URL> fluxo
+git clone https://github.com/geanrf/fluxo-financeiro.git fluxo
 cd fluxo
 ```
 
@@ -121,7 +121,7 @@ npm run dev
 - OpenAPI JSON: http://localhost:8080/api-docs
 - health check: http://localhost:8080/actuator/health
 
-There is no default account. Select **Criar conta** on the first run. Passwords must contain 8–72 characters, including an uppercase letter, a lowercase letter, and a number.
+There is no default account. Use the account creation option on the first run. Passwords must contain 8–72 characters, including an uppercase letter, a lowercase letter, and a number.
 
 ## Main endpoints
 
@@ -181,4 +181,4 @@ The latest repository review is documented in [docs/security-audit.md](docs/secu
 
 ## Project status
 
-Functional and validated MVP with authentication, income, expenses, and a dashboard integrated with the real API. The repository is ready to be published as a portfolio project.
+Published and functional MVP with authentication, income, expenses, and a dashboard integrated with the real API. The project is available on [GitHub](https://github.com/geanrf/fluxo-financeiro) as a Java Full Stack portfolio project.
